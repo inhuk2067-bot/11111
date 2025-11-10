@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>페이지 이동 중</title>
+<script>
+
+  // ▼▼▼ 이 괄호 [ ] 안에 원하는 사이트 주소를 넣으세요. ▼▼▼
+  //
+  // [사용법]
+  // 1. 'https://www.example.com' 처럼 전체 주소를 따옴표(')로 감싸서 넣으세요.
+  // 2. 각 주소는 쉼표(,)로 구분합니다.
+  // 3. 마지막 주소 뒤에는 쉼표를 넣지 않습니다.
+  //
+  // 예시:
+  // var siteList = [
+  //   'https://www.google.com',
+  //   'https://www.naver.com',
+  //   'https://www.daum.net'
+  // ];
+
+var siteList = [
+    'https://map.naver.com/p/entry/place/1518656118?c=15.00,0,0,0,dh&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202511110231&locale=ko&svcName=map_pcv5', // <-- 쉼표 추가!
+    'https://map.naver.com/p/entry/place/749007290?c=15.00,0,0,0,dh&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202511110234&locale=ko&svcName=map_pcv5', // <-- 쉼표 추가!
+    'https://map.naver.com/p/entry/place/1293586178?c=15.00,0,0,0,dh&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202511110235&locale=ko&svcName=map_pcv5', // <-- 쉼표 추가!
+    'https://map.naver.com/p/entry/place/1103991496?c=15.00,0,0,0,dh&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202511110235&locale=ko&svcName=map_pcv5', // <-- 쉼표 추가!
+    'https://map.naver.com/p/entry/place/1197089038?c=15.00,0,0,0,dh&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202511110235&locale=ko&svcName=map_pcv5', // <-- 쉼표 추가!
+    'https://map.naver.com/p/entry/place/1663928806?c=15.00,0,0,0,dh&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202511110132&locale=ko&svcName=map_pcv5'  // <-- 마지막은 쉼표 없음
+  ];
+
+  // ▲▲▲ 여기까지만 수정하세요. 아래 코드는 수정하지 마세요. ▲▲▲
+
+
+  // --- 이 아래는 수정하지 마세요 ---
+  try {
+    if (siteList && siteList.length > 0) {
+      // 0부터 (목록 개수 - 1) 사이의 무작위 숫자 뽑기
+      var randomIndex = Math.floor(Math.random() * siteList.length);
+      
+      // 무작위로 뽑힌 주소 가져오기
+      var randomSite = siteList[randomIndex];
+      
+      // 해당 주소로 즉시 이동시키기
+      window.location.href = randomSite;
+    } else {
+      // 목록이 비어있는 경우 화면에 오류 메시지 표시
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.innerHTML = '오류: 사이트 목록이 비어있습니다. 코드를 확인해주세요.';
+      });
+    }
+  } catch (e) {
+    // 기타 오류 발생 시 화면에 오류 메시지 표시
+    document.addEventListener('DOMContentLoaded', function() {
+      document.body.innerHTML = '페이지 이동 중 오류가 발생했습니다.';
+    });
+  }
+</script>
+</head>
+<body>
+  <p>페이지로 이동 중입니다. 잠시만 기다려주세요...</p>
+</body>
+</html>
